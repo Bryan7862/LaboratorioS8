@@ -1,0 +1,72 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 14 may 2025, 19:50:15
+    Author     : Andy123
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e3f2fd; /* azul claro */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.2); /* azul claro */
+}
+
+h2 {
+    text-align: center;
+    color: #1976d2; /* azul medio */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #0d47a1; /* azul oscuro */
+}
+
+input[type="number"],
+select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #bbdefb; /* borde azul claro */
+    border-radius: 6px;
+    background: #f1f8ff; /* fondo azul pálido */
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #2196f3; /* azul principal */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1565c0; /* azul más oscuro */
+}
+
+.resultado {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #e3f2fd;
+    border-left: 5px solid #1976d2;
+    border-radius: 6px;
+    color: #0d47a1;
+}
