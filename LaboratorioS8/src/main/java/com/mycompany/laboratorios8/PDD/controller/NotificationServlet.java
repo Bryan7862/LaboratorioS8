@@ -11,34 +11,43 @@ package com.mycompany.laboratorios8.PDD.controller;
 
 import com.mycompany.laboratorios8.PDD.notifications.Notificador;
 import com.mycompany.laboratorios8.PDD.notifications.NotificadorFactory;
+import com.mycompany.laboratorios8.PDD.strategy.FormateadorMensaje;
+import com.mycompany.laboratorios8.PDD.strategy.HtmlFormateador;
+import com.mycompany.laboratorios8.PDD.strategy.TextoPlanoFormateador;
+
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
-@WebServlet("/enviarNotificacion")
+//@WebServlet("/enviarNotificacion")
 public class NotificationServlet extends HttpServlet {
-    private NotificadorFactory factory;
-
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        factory = new NotificadorFactory();
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        
         req.setCharacterEncoding("UTF-8");
         String tipoNotificacion = req.getParameter("tipo");
         String destinatario = req.getParameter("destinatario");
         String mensaje = req.getParameter("mensaje");
+        String formato = req.getParameter("formato"); // Mi nuevo parametro
         String resultado = "";
 
         try {
-            Notificador notificador = factory.crearNotificador(tipoNotificacion);
+            // seleccionar formateador segun el tipo
+            FormateadorMensaje formateador;
+            if ("HTML".equalsIgnoreCase(formato)) {
+                formateador = new HtmlFormateador();
+            } else {
+                formateador = new TextoPlanoFormateador();
+            }
+
+            // crear notificador con el formateador
+            Notificador notificador = NotificadorFactory.crearNotificador(tipoNotificacion, formateador);
+
             if (notificador != null) {
                 resultado = notificador.enviar(destinatario, mensaje);
             } else {

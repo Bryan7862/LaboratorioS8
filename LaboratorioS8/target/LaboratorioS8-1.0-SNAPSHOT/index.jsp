@@ -3,6 +3,11 @@
     Created on : 14 may 2025, 18:38:49
     Author     : Andy123
 --%>
+ <%-- 
+    Document   : index
+    Created on : 14 may 2025, 18:38:49
+    Author     : Andy123
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -23,9 +28,10 @@
       <div class="mb-3">
         <label for="tipo" class="form-label">Tipo de Notificación:</label>
         <select class="form-select" id="tipo" name="tipo" required>
-          <option value="EMAIL">Email</option>
-          <option value="SMS">SMS</option>
-        </select>
+  <option value="EMAIL">Email</option>
+  <option value="SMS">SMS</option>
+  <option value="PUSH">Push Notification</option> <!-- mi actualizacion -->
+</select>
       </div>
       <div class="mb-3">
         <label for="destinatario" class="form-label">Destinatario:</label>
@@ -36,6 +42,13 @@
         <label for="mensaje" class="form-label">Mensaje:</label>
         <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required><c:out value='${param.mensaje}'/></textarea>
       </div>
+      <div class="mb-3">
+  <label for="formato" class="form-label">Formato del Mensaje:</label>
+  <select class="form-select" id="formato" name="formato" required>
+    <option value="PLANO">Texto Plano</option>
+    <option value="HTML">HTML</option>
+  </select>
+</div>
       <button class="btn btn-primary" type="submit">Enviar Notificación</button>
     </form>
 

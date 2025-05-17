@@ -1,27 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.laboratorios8.PDD.notifications;
+
+import com.mycompany.laboratorios8.PDD.strategy.FormateadorMensaje;
 
 /**
  *
  * @author Andy123
  */
 public class NotificadorFactory {
-    public static Notificador crearNotificador(String tipo) {
+     public static Notificador crearNotificador(String tipo, FormateadorMensaje formateador) {
         if (tipo == null) {
             return null;
         }
         switch (tipo.toUpperCase()) {
-            case "EMAIL":
-                return new EmailNotificador();
-            case "SMS":
-                return new SmsNotificador();
-            case "PUSH":
-                return new PushNotificador();// Mi nuevo caso
-            default:
-                throw new IllegalArgumentException("Tipo de notificación no soportado: " + tipo);
+            case "EMAIL" -> {
+                return new EmailNotificador(formateador);
+            }
+            case "SMS" -> {
+                return new SmsNotificador(formateador);
+            }
+            case "PUSH" -> {
+                return new PushNotificador(formateador);
+            }
+            default -> throw new IllegalArgumentException("Tipo de notificación no soportado: " + tipo);
         }
+    }
+
+    public static Notificador crearNotificador(String tipo) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

@@ -4,13 +4,24 @@
  */
 package com.mycompany.laboratorios8.PDD.notifications;
 
+import com.mycompany.laboratorios8.PDD.strategy.FormateadorMensaje;
+
 /**
  *
  * @author Andy123
  */
-public abstract class PushNotificador implements Notificador {
-    public String enviarNotificacion(String destinatario, String mensaje) {
-        // Simulación de envío de notificación push
-        return "Notificación Push enviada a " + destinatario + " con el mensaje: " + mensaje;
+public class PushNotificador implements Notificador {
+    private final FormateadorMensaje formateador;
+
+    public PushNotificador(FormateadorMensaje formateador) {
+        this.formateador = formateador;
+    }
+
+    @Override
+    public String enviar(String destinatario, String mensaje) {
+        String mensajeFormateado = formateador.formatear(mensaje);
+        // Simulación del envío de una notificación push
+        System.out.println("Enviando PUSH a: " + destinatario + " con mensaje: " + mensajeFormateado);
+        return "Notificación Push enviada a " + destinatario + " con formato: " + formateador.getClass().getSimpleName();
     }
 }

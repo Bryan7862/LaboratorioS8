@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #e3f2fd; /* azul claro */
+    background: #e3f2fd; 
     margin: 0;
     padding: 0;
 }
@@ -20,12 +20,12 @@ body {
     background: #ffffff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(33, 150, 243, 0.2); /* azul claro */
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.2); 
 }
 
 h2 {
     text-align: center;
-    color: #1976d2; /* azul medio */
+    color: #1976d2; 
 }
 
 form {
@@ -35,22 +35,22 @@ form {
 
 label {
     margin-top: 10px;
-    color: #0d47a1; /* azul oscuro */
+    color: #0d47a1; 
 }
 
 input[type="number"],
 select {
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #bbdefb; /* borde azul claro */
+    border: 1px solid #bbdefb; 
     border-radius: 6px;
-    background: #f1f8ff; /* fondo azul pálido */
+    background: #f1f8ff; 
 }
 
 button {
     margin-top: 20px;
     padding: 12px;
-    background-color: #2196f3; /* azul principal */
+    background-color: #2196f3; 
     color: white;
     border: none;
     border-radius: 8px;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-    background-color: #1565c0; /* azul más oscuro */
+    background-color: #1565c0; 
 }
 
 .resultado {

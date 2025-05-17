@@ -1,7 +1,12 @@
 com\mycompany\laboratorios8\PDD\controller\NotificationServlet.class
-com\mycompany\laboratorios8\JakartaRestConfiguration.class
-com\mycompany\laboratorios8\PDD\notifications\EmailNotificador.class
+com\mycompany\laboratorios8\PDD\notifications\PushNotificador.class
+com\mycompany\laboratorios8\PDD\strategy\HtmlFormateador.class
 com\mycompany\laboratorios8\resources\JakartaEE10Resource.class
 com\mycompany\laboratorios8\PDD\notifications\NotificadorFactory.class
+com\mycompany\laboratorios8\PDD\strategy\FormateadorMensaje.class
+com\mycompany\laboratorios8\PDD\controller\enviarNotificacion.class
+com\mycompany\laboratorios8\JakartaRestConfiguration.class
+com\mycompany\laboratorios8\PDD\notifications\EmailNotificador.class
+com\mycompany\laboratorios8\PDD\strategy\TextoPlanoFormateador.class
 com\mycompany\laboratorios8\PDD\notifications\SmsNotificador.class
 com\mycompany\laboratorios8\PDD\notifications\Notificador.class
